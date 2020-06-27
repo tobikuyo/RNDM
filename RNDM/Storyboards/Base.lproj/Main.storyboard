@@ -10,7 +10,7 @@
         <!--RNDM-->
         <scene sceneID="sc2-mA-Qkm">
             <objects>
-                <viewController id="Gbg-wt-TCq" sceneMemberID="viewController">
+                <viewController id="Gbg-wt-TCq" customClass="MainViewController" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pv4-S0-i3B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="983" y="17"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Thought View Controller-->
         <scene sceneID="Hdc-zy-Wek">
             <objects>
-                <viewController id="EXF-cg-Hbc" sceneMemberID="viewController">
+                <viewController id="EXF-cg-Hbc" customClass="AddThoughtViewController" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GRd-hH-Uw5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,6 +48,9 @@
                                     <segment title="Crazy"/>
                                 </segments>
                                 <color key="tintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="categoryChanged:" destination="EXF-cg-Hbc" eventType="valueChanged" id="ISl-JS-27F"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-bT-lW9">
                                 <rect key="frame" x="20" y="160" width="374" height="21"/>
@@ -55,9 +58,9 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.14999999999999999" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-Tb-lyc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-Tb-lyc">
                                 <rect key="frame" x="20" y="201" width="374" height="100"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.67000000000000004" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="l6r-8Y-P23"/>
                                 </constraints>
@@ -75,6 +78,9 @@
                                 <state key="normal" title="Post">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="postButtonTapped:" destination="EXF-cg-Hbc" eventType="touchUpInside" id="SrX-3Y-zj9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -95,6 +101,12 @@
                         <viewLayoutGuide key="safeArea" id="Gfb-Sp-Xs8"/>
                     </view>
                     <navigationItem key="navigationItem" id="fcg-HU-Fya"/>
+                    <connections>
+                        <outlet property="categorySegment" destination="Zs3-dW-MZj" id="usx-1D-xsE"/>
+                        <outlet property="postButton" destination="APS-7m-lOo" id="ku7-C5-XnJ"/>
+                        <outlet property="thoughtTextView" destination="m1Z-Tb-lyc" id="0lu-zb-fn5"/>
+                        <outlet property="usernameTextField" destination="6pm-bT-lW9" id="tyO-2E-6pV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6U-SU-xPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
