@@ -46,6 +46,7 @@ class MainViewController: UIViewController {
     private func fetchData() {
         thoughtsListener = thoughtsCollectionRef
             .whereField(DB.category, isEqualTo: selectedCategory)
+            .order(by: DB.timestamp, descending: true)
             .addSnapshotListener { snapshot, error in
 
             if let error = error {

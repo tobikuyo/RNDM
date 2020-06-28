@@ -38,6 +38,7 @@ class AddThoughtViewController: UIViewController {
         thoughtTextView.text = "My random thought..."
         thoughtTextView.textColor = .lightGray
         thoughtTextView.delegate = self
+        usernameTextField.autocorrectionType = .no
     }
 
     // MARK: - IBActions
