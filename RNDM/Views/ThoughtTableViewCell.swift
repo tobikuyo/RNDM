@@ -22,7 +22,7 @@ class ThoughtTableViewCell: UITableViewCell {
         likesCountLabel.text = thought.numLikes.description
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, h:mm a"
+        dateFormatter.dateFormat = "MMM d, HH:mm"
         let timestamp = dateFormatter.string(from: thought.timestamp)
         timestampLabel.text = timestamp
     }

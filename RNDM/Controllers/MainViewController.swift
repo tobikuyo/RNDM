@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
             for document in documents {
                 let data = document.data()
                 let username = data[DB.username] as? String ?? "Anonymous"
-                let timestamp = data[DB.timestamp] as? Date ?? Date()
+                let timestamp = data[DB.timestamp] as? Timestamp ?? Timestamp()
                 let thoughtText = data[DB.thoughtText] as? String ?? ""
                 let numLikes = data[DB.numLikes] as? Int ?? 0
                 let numComments = data[DB.numComments] as? Int ?? 0
@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
                                       thoughtText: thoughtText,
                                       numLikes: numLikes,
                                       numComments: numComments,
-                                      timestamp: timestamp,
+                                      timestamp: timestamp.dateValue(),
                                       documentID: documentID)
                 self.thoughts.append(thought)
             }
