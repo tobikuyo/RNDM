@@ -16,4 +16,6 @@ struct DB {
     static let thoughtText  = "thoughtText"
     static let timestamp    = "timestamp"
     static let username     = "username"
+    static let users        = "users"
+    static let dateCreated  = "dateCreated"
 }
