@@ -16,13 +16,12 @@ class MainViewController: UIViewController {
 
     private var thoughts: [Thought] = []
     private let thoughtsCollectionRef = Firestore.firestore().collection(K.thoughts)
+    private var thoughtsListener: ListenerRegistration!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 100
-        tableView.estimatedRowHeight = UITableView.automaticDimension
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -30,12 +29,18 @@ class MainViewController: UIViewController {
         fetchData()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        thoughtsListener.remove()
+    }
+
     private func fetchData() {
-        thoughtsCollectionRef.getDocuments { snapshot, error in
+        thoughtsListener = thoughtsCollectionRef.addSnapshotListener { snapshot, error in
             if let error = error {
                 debugPrint("Error fetching documents: \(error.localizedDescription)")
             }
 
+            self.thoughts.removeAll()
             guard let documents = snapshot?.documents else { return }
 
             for document in documents {
@@ -57,6 +62,7 @@ class MainViewController: UIViewController {
             }
 
             self.tableView.reloadData()
+
         }
     }
 }
@@ -74,5 +80,21 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let thought = thoughts[indexPath.row]
         cell.configureCell(thought: thought)
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        } else {
+            return 100
+        }
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        } else {
+            return 100
+        }
     }
 }
