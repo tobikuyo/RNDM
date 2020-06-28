@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct K {
+struct DB {
     static let thoughts     = "thoughts"
     static let category     = "category"
     static let numComments  = "numComments"

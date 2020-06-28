@@ -58,13 +58,13 @@ class AddThoughtViewController: UIViewController {
             let thoughtText = thoughtTextView.text,
             let username = usernameTextField.text else { return }
 
-        database.collection(K.thoughts).addDocument(data: [
-            K.category: selectedCategory,
-            K.numComments: 0,
-            K.numLikes: 0,
-            K.thoughtText: thoughtText,
-            K.timestamp: FieldValue.serverTimestamp(),
-            K.username: username
+        database.collection(DB.thoughts).addDocument(data: [
+            DB.category: selectedCategory,
+            DB.numComments: 0,
+            DB.numLikes: 0,
+            DB.thoughtText: thoughtText,
+            DB.timestamp: FieldValue.serverTimestamp(),
+            DB.username: username
         ]) { error in
             if let error = error {
                 print("Error adding document: \(error.localizedDescription)")

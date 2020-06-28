@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
     private var thoughts: [Thought] = []
-    private let thoughtsCollectionRef = Firestore.firestore().collection(K.thoughts)
+    private let thoughtsCollectionRef = Firestore.firestore().collection(DB.thoughts)
     private var thoughtsListener: ListenerRegistration!
 
     override func viewDidLoad() {
@@ -45,11 +45,11 @@ class MainViewController: UIViewController {
 
             for document in documents {
                 let data = document.data()
-                let username = data[K.username] as? String ?? "Anonymous"
-                let timestamp = data[K.timestamp] as? Date ?? Date()
-                let thoughtText = data[K.thoughtText] as? String ?? ""
-                let numLikes = data[K.numLikes] as? Int ?? 0
-                let numComments = data[K.numComments] as? Int ?? 0
+                let username = data[DB.username] as? String ?? "Anonymous"
+                let timestamp = data[DB.timestamp] as? Date ?? Date()
+                let thoughtText = data[DB.thoughtText] as? String ?? ""
+                let numLikes = data[DB.numLikes] as? Int ?? 0
+                let numComments = data[DB.numComments] as? Int ?? 0
                 let documentID = document.documentID
 
                 let thought = Thought(username: username,
