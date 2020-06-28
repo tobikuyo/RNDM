@@ -17,6 +17,8 @@ class ThoughtTableViewCell: UITableViewCell {
     @IBOutlet var likesCountLabel: UILabel!
 
     func configureCell(thought: Thought) {
-
+        usernameLabel.text = thought.username
+        thoughtTextLabel.text = thought.thoughtText
+        likesCountLabel.text = thought.numLikes.description
     }
 }
