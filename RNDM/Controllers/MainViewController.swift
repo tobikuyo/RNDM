@@ -11,12 +11,19 @@ import Firebase
 
 class MainViewController: UIViewController {
 
+    // MARK: - IBOutlets
+
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
+
+    // MARK: - Properties
 
     private var thoughts: [Thought] = []
     private let thoughtsCollectionRef = Firestore.firestore().collection(DB.thoughts)
     private var thoughtsListener: ListenerRegistration!
+    private var selectedCategory = ThoughtCategory.funny.rawValue
+
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +41,13 @@ class MainViewController: UIViewController {
         thoughtsListener.remove()
     }
 
+    // MARK: - Methods and IBActions
+
     private func fetchData() {
-        thoughtsListener = thoughtsCollectionRef.addSnapshotListener { snapshot, error in
+        thoughtsListener = thoughtsCollectionRef
+            .whereField(DB.category, isEqualTo: selectedCategory)
+            .addSnapshotListener { snapshot, error in
+
             if let error = error {
                 debugPrint("Error fetching documents: \(error.localizedDescription)")
             }
@@ -64,6 +76,22 @@ class MainViewController: UIViewController {
             self.tableView.reloadData()
 
         }
+    }
+
+    @IBAction func categoryChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            selectedCategory = ThoughtCategory.funny.rawValue
+        case 1:
+            selectedCategory = ThoughtCategory.serious.rawValue
+        case 2:
+            selectedCategory = ThoughtCategory.crazy.rawValue
+        default:
+            selectedCategory = ThoughtCategory.popular.rawValue
+        }
+
+        thoughtsListener.remove()
+        fetchData()
     }
 }
 
