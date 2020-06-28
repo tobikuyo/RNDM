@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchData()
+        fetchByCategory()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,43 +41,47 @@ class MainViewController: UIViewController {
         thoughtsListener.remove()
     }
 
-    // MARK: - Methods and IBActions
+    // MARK: - Methods
+
+    private func fetchByCategory() {
+        if selectedCategory == ThoughtCategory.popular.rawValue {
+            sortByPopularity()
+        } else {
+            fetchData()
+        }
+    }
 
     private func fetchData() {
         thoughtsListener = thoughtsCollectionRef
             .whereField(DB.category, isEqualTo: selectedCategory)
             .order(by: DB.timestamp, descending: true)
             .addSnapshotListener { snapshot, error in
+                if let error = error {
+                    debugPrint("Error fetching documents: \(error.localizedDescription)")
+                }
 
-            if let error = error {
-                debugPrint("Error fetching documents: \(error.localizedDescription)")
-            }
-
-            self.thoughts.removeAll()
-            guard let documents = snapshot?.documents else { return }
-
-            for document in documents {
-                let data = document.data()
-                let username = data[DB.username] as? String ?? "Anonymous"
-                let timestamp = data[DB.timestamp] as? Timestamp ?? Timestamp()
-                let thoughtText = data[DB.thoughtText] as? String ?? ""
-                let numLikes = data[DB.numLikes] as? Int ?? 0
-                let numComments = data[DB.numComments] as? Int ?? 0
-                let documentID = document.documentID
-
-                let thought = Thought(username: username,
-                                      thoughtText: thoughtText,
-                                      numLikes: numLikes,
-                                      numComments: numComments,
-                                      timestamp: timestamp.dateValue(),
-                                      documentID: documentID)
-                self.thoughts.append(thought)
-            }
-
-            self.tableView.reloadData()
-
+                self.thoughts.removeAll()
+                self.thoughts = Thought.parse(snapshot)
+                self.tableView.reloadData()
         }
     }
+
+    private func sortByPopularity() {
+        thoughtsListener = thoughtsCollectionRef
+            .order(by: DB.numLikes, descending: true)
+            .addSnapshotListener { snapshot, error in
+
+                if let error = error {
+                    debugPrint("Error fetching documents: \(error.localizedDescription)")
+                }
+
+                self.thoughts.removeAll()
+                self.thoughts = Thought.parse(snapshot)
+                self.tableView.reloadData()
+        }
+    }
+
+    // MARK: - IBActions
 
     @IBAction func categoryChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
@@ -92,7 +96,7 @@ class MainViewController: UIViewController {
         }
 
         thoughtsListener.remove()
-        fetchData()
+        fetchByCategory()
     }
 }
 
