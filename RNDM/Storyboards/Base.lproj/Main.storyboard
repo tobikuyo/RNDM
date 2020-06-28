@@ -31,7 +31,7 @@
                                     <action selector="categoryChanged:" destination="EXF-cg-Hbc" eventType="valueChanged" id="1Yx-LJ-PHK"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vbw-XW-bIr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vbw-XW-bIr">
                                 <rect key="frame" x="0.0" y="160" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -83,6 +83,7 @@
                                                 <constraint firstItem="j9B-lX-OWM" firstAttribute="trailing" secondItem="LO0-fE-CHr" secondAttribute="trailingMargin" id="APu-ap-4bY"/>
                                                 <constraint firstItem="NXj-5t-pb5" firstAttribute="leading" secondItem="LO0-fE-CHr" secondAttribute="leadingMargin" id="DaU-RV-pMX"/>
                                                 <constraint firstItem="Wpe-NE-D1h" firstAttribute="top" secondItem="j9B-lX-OWM" secondAttribute="bottom" constant="4" id="KbI-Mi-8fA"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wpe-NE-D1h" secondAttribute="bottom" constant="10" id="QIz-Pb-FnQ"/>
                                                 <constraint firstItem="A8E-gy-3nu" firstAttribute="leading" secondItem="NXj-5t-pb5" secondAttribute="trailing" constant="8" id="SVi-Jc-Yrr"/>
                                                 <constraint firstItem="A8E-gy-3nu" firstAttribute="centerY" secondItem="NXj-5t-pb5" secondAttribute="centerY" id="TEC-kh-EOe"/>
                                                 <constraint firstItem="NXj-5t-pb5" firstAttribute="top" secondItem="LO0-fE-CHr" secondAttribute="topMargin" id="kML-GQ-5nT"/>
