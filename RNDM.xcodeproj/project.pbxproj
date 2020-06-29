@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C267B4B24A97DBF00450856 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4A24A97DBF00450856 /* CommentsViewController.swift */; };
+		2C267B4D24A983A500450856 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4C24A983A500450856 /* CommentTableViewCell.swift */; };
 		2C76E21E24A91E2300633783 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76E21D24A91E2300633783 /* LoginViewController.swift */; };
 		2C76E22224A920D100633783 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76E22124A920D100633783 /* CreateUserViewController.swift */; };
 		2C76E22424A9227B00633783 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C76E22324A9227B00633783 /* Login.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C267B4A24A97DBF00450856 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		2C267B4C24A983A500450856 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		2C76E21D24A91E2300633783 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C76E22124A920D100633783 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		2C76E22324A9227B00633783 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				2C76E22124A920D100633783 /* CreateUserViewController.swift */,
 				2CD4FC4224A7D86800E7990C /* MainViewController.swift */,
 				2CD4FC4424A7D87300E7990C /* AddThoughtViewController.swift */,
+				2C267B4A24A97DBF00450856 /* CommentsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD4FC4F24A80DCF00E7990C /* ThoughtTableViewCell.swift */,
+				2C267B4C24A983A500450856 /* CommentTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,9 +304,11 @@
 				2CD4FC4A24A7E31600E7990C /* ThoughtCategory.swift in Sources */,
 				2CD4FC5024A80DCF00E7990C /* ThoughtTableViewCell.swift in Sources */,
 				2CC0224924A7BFFA005F1D6D /* AppDelegate.swift in Sources */,
+				2C267B4D24A983A500450856 /* CommentTableViewCell.swift in Sources */,
 				2CC0224B24A7BFFA005F1D6D /* SceneDelegate.swift in Sources */,
 				2CD4FC4E24A7F4E900E7990C /* Thought.swift in Sources */,
 				2CD4FC4C24A7E43600E7990C /* Constants.swift in Sources */,
+				2C267B4B24A97DBF00450856 /* CommentsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
