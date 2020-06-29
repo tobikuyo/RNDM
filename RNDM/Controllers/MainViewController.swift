@@ -123,6 +123,18 @@ class MainViewController: UIViewController {
             debugPrint("Error signing out: \(error)")
         }
     }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCommentSegue" {
+            if let destinationVC = segue.destination as? CommentsViewController,
+                let indexPath = tableView.indexPathForSelectedRow {
+                let thought = thoughts[indexPath.row]
+                destinationVC.thought = thought
+            }
+        }
+    }
 }
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
