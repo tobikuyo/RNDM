@@ -15,13 +15,30 @@ class CommentsViewController: UIViewController {
     @IBOutlet weak var keyboardView: UIView!
     
     var thought: Thought?
+    var comments: [Comment] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     @IBAction func addCommentTapped(_ sender: Any) {
+    }
+}
+
+extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as? CommentTableViewCell else {
+            return UITableViewCell()
+        }
+
+        let comment = comments[indexPath.row]
+        cell.configureCell(comment: comment)
+        return cell
     }
 }

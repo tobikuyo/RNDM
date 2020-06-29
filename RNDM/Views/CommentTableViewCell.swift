@@ -14,4 +14,13 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet var timestampLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
 
+    func configureCell(comment: Comment) {
+        usernameLabel.text = comment.username
+        commentLabel.text = comment.commentText
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, HH:mm"
+        let timestamp = dateFormatter.string(from: comment.timestamp)
+        timestampLabel.text = timestamp
+    }
 }
