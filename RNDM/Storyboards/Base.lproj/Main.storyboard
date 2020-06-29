@@ -221,7 +221,7 @@
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5NS-Xa-dYY">
-                                        <rect key="frame" x="8" y="8" width="360" height="34"/>
+                                        <rect key="frame" x="8" y="8" width="360" height="42"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -240,7 +240,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="5NS-Xa-dYY" firstAttribute="top" secondItem="E7f-l0-k3Z" secondAttribute="top" constant="8" id="7aY-Mb-CH9"/>
-                                    <constraint firstAttribute="bottom" secondItem="5NS-Xa-dYY" secondAttribute="bottom" constant="8" id="HB3-T9-Ts5"/>
+                                    <constraint firstAttribute="bottom" secondItem="5NS-Xa-dYY" secondAttribute="bottom" id="HB3-T9-Ts5"/>
                                     <constraint firstItem="iYN-oL-DZo" firstAttribute="leading" secondItem="5NS-Xa-dYY" secondAttribute="trailing" constant="8" id="KZT-he-4FV"/>
                                     <constraint firstItem="iYN-oL-DZo" firstAttribute="top" secondItem="E7f-l0-k3Z" secondAttribute="top" constant="13" id="atu-Gb-dIN"/>
                                     <constraint firstAttribute="bottom" secondItem="iYN-oL-DZo" secondAttribute="bottom" constant="13" id="eSp-Yg-1C2"/>

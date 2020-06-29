@@ -10,6 +10,7 @@
 		2C267B4B24A97DBF00450856 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4A24A97DBF00450856 /* CommentsViewController.swift */; };
 		2C267B4D24A983A500450856 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4C24A983A500450856 /* CommentTableViewCell.swift */; };
 		2C267B4F24A9854F00450856 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4E24A9854F00450856 /* Comment.swift */; };
+		2C267B5124AA77C400450856 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B5024AA77C300450856 /* KeyboardBoundView.swift */; };
 		2C76E21E24A91E2300633783 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76E21D24A91E2300633783 /* LoginViewController.swift */; };
 		2C76E22224A920D100633783 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C76E22124A920D100633783 /* CreateUserViewController.swift */; };
 		2C76E22424A9227B00633783 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C76E22324A9227B00633783 /* Login.storyboard */; };
@@ -32,6 +33,7 @@
 		2C267B4A24A97DBF00450856 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		2C267B4C24A983A500450856 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		2C267B4E24A9854F00450856 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		2C267B5024AA77C300450856 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		2C76E21D24A91E2300633783 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2C76E22124A920D100633783 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		2C76E22324A9227B00633783 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -92,8 +94,7 @@
 				2CD4FC4624A7D8AD00E7990C /* Models */,
 				2CD4FC4724A7D8BA00E7990C /* Views */,
 				2CD4FC4124A7D4F100E7990C /* Controllers */,
-				2CD4FC4824A7E2FF00E7990C /* Helpers */,
-				2CD4FC4024A7D4E100E7990C /* Resources */,
+				2CD4FC4824A7E2FF00E7990C /* Utilities */,
 			);
 			path = RNDM;
 			sourceTree = "<group>";
@@ -117,14 +118,6 @@
 				2CC0225324A7C001005F1D6D /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		2CD4FC4024A7D4E100E7990C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2CC0226024A7C733005F1D6D /* GoogleService-Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		2CD4FC4124A7D4F100E7990C /* Controllers */ = {
@@ -157,13 +150,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2CD4FC4824A7E2FF00E7990C /* Helpers */ = {
+		2CD4FC4824A7E2FF00E7990C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				2CD4FC4924A7E31600E7990C /* ThoughtCategory.swift */,
 				2CD4FC4B24A7E43600E7990C /* Constants.swift */,
+				2C267B5024AA77C300450856 /* KeyboardBoundView.swift */,
+				2CC0226024A7C733005F1D6D /* GoogleService-Info.plist */,
 			);
-			path = Helpers;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		97AE0B2753352CB46AA80068 /* Frameworks */ = {
@@ -310,6 +305,7 @@
 				2C267B4D24A983A500450856 /* CommentTableViewCell.swift in Sources */,
 				2C267B4F24A9854F00450856 /* Comment.swift in Sources */,
 				2CC0224B24A7BFFA005F1D6D /* SceneDelegate.swift in Sources */,
+				2C267B5124AA77C400450856 /* KeyboardBoundView.swift in Sources */,
 				2CD4FC4E24A7F4E900E7990C /* Thought.swift in Sources */,
 				2CD4FC4C24A7E43600E7990C /* Constants.swift in Sources */,
 				2C267B4B24A97DBF00450856 /* CommentsViewController.swift in Sources */,
