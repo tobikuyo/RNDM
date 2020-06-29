@@ -18,4 +18,6 @@ struct DB {
     static let username     = "username"
     static let users        = "users"
     static let dateCreated  = "dateCreated"
+    static let comments     = "comments"
+    static let commentText  = "commentText"
 }
