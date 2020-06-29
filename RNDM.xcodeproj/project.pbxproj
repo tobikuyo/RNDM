@@ -124,10 +124,10 @@
 		2CD4FC4124A7D4F100E7990C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2CD4FC4224A7D86800E7990C /* MainViewController.swift */,
-				2CD4FC4424A7D87300E7990C /* AddThoughtViewController.swift */,
 				2C76E21D24A91E2300633783 /* LoginViewController.swift */,
 				2C76E22124A920D100633783 /* CreateUserViewController.swift */,
+				2CD4FC4224A7D86800E7990C /* MainViewController.swift */,
+				2CD4FC4424A7D87300E7990C /* AddThoughtViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

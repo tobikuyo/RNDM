@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class MainViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class MainViewController: UIViewController {
     private let thoughtsCollectionRef = Firestore.firestore().collection(DB.thoughts)
     private var thoughtsListener: ListenerRegistration!
     private var selectedCategory = ThoughtCategory.funny.rawValue
+    private var handle: AuthStateDidChangeListenerHandle?
 
     // MARK: - View Lifecycle
 
@@ -33,12 +35,15 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchByCategory()
+        checkState()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        thoughtsListener.remove()
+
+        if thoughtsListener != nil {
+            thoughtsListener.remove()
+        }
     }
 
     // MARK: - Methods
@@ -70,7 +75,6 @@ class MainViewController: UIViewController {
         thoughtsListener = thoughtsCollectionRef
             .order(by: DB.numLikes, descending: true)
             .addSnapshotListener { snapshot, error in
-
                 if let error = error {
                     debugPrint("Error fetching documents: \(error.localizedDescription)")
                 }
@@ -79,6 +83,19 @@ class MainViewController: UIViewController {
                 self.thoughts = Thought.parse(snapshot)
                 self.tableView.reloadData()
         }
+    }
+
+    private func checkState() {
+        handle = Auth.auth().addStateDidChangeListener({ auth, user in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                loginVC.modalPresentationStyle = .fullScreen
+                self.present(loginVC, animated: true, completion: nil)
+            } else {
+                self.fetchByCategory()
+            }
+        })
     }
 
     // MARK: - IBActions
