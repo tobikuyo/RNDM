@@ -117,6 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="Svs-c4-bhU"/>
                     </view>
                     <navigationItem key="navigationItem" title="RNDM" id="lf9-Xl-ELZ">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="XPA-7x-Drk">
+                            <connections>
+                                <action selector="signoutTapped:" destination="Gbg-wt-TCq" id="9QS-hW-gOt"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="addThoughtIcon" id="1yd-cn-mOF">
                             <connections>
                                 <segue destination="EXF-cg-Hbc" kind="show" id="LXU-SM-Bj8"/>

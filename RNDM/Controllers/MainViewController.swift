@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkState()
+        checkLoginState()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -85,7 +85,7 @@ class MainViewController: UIViewController {
         }
     }
 
-    private func checkState() {
+    private func checkLoginState() {
         handle = Auth.auth().addStateDidChangeListener({ auth, user in
             if user == nil {
                 let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -114,6 +114,14 @@ class MainViewController: UIViewController {
 
         thoughtsListener.remove()
         fetchByCategory()
+    }
+
+    @IBAction func signoutTapped(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            debugPrint("Error signing out: \(error)")
+        }
     }
 }
 
