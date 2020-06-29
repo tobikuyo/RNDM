@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class Comment {
     private(set) var username: String
@@ -17,5 +18,23 @@ class Comment {
         self.username = username
         self.timestamp = timestamp
         self.commentText = commentText
+    }
+
+    class func parse(_ snapshot: QuerySnapshot?) -> [Comment] {
+        var comments: [Comment] = []
+
+        guard let documents = snapshot?.documents else { return comments }
+
+        for document in documents {
+            let data = document.data()
+            let username = data[DB.username] as? String ?? "Anonymous"
+            let timestamp = data[DB.timestamp] as? Timestamp ?? Timestamp()
+            let commentText = data[DB.commentText] as? String ?? ""
+
+            let comment = Comment(username: username, timestamp: timestamp.dateValue(), commentText: commentText)
+            comments.append(comment)
+        }
+
+        return comments
     }
 }
