@@ -8,6 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+
+protocol ThoughtDelegate: class {
+    func thoughtOptionsTapped(_ thought: Thought)
+}
 
 class ThoughtTableViewCell: UITableViewCell {
 
@@ -20,6 +25,7 @@ class ThoughtTableViewCell: UITableViewCell {
     @IBOutlet var optionsMenuImage: UIImageView!
     
     private var thought: Thought!
+    private weak var delegate: ThoughtDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,8 +46,9 @@ class ThoughtTableViewCell: UITableViewCell {
         }
     }
 
-    func configureCell(thought: Thought) {
+    func configureCell(thought: Thought, delegate: ThoughtDelegate?) {
         self.thought = thought
+        self.delegate = delegate
 
         usernameLabel.text = thought.username
         thoughtTextLabel.text = thought.thoughtText
@@ -65,6 +72,6 @@ class ThoughtTableViewCell: UITableViewCell {
     }
 
     @objc func optionsMenuTapped() {
-        
+        delegate?.thoughtOptionsTapped(thought)
     }
 }

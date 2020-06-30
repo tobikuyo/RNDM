@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import FirebaseAuth
+
+protocol CommentDelegate: class {
+    func commentOptionsTapped(_ comment: Comment)
+}
 
 class CommentTableViewCell: UITableViewCell {
 
@@ -15,7 +20,13 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet var commentLabel: UILabel!
     @IBOutlet var optionsMenuImage: UIImageView!
 
-    func configureCell(comment: Comment) {
+    private var comment: Comment!
+    private weak var delegate: CommentDelegate?
+
+    func configureCell(comment: Comment, delegate: CommentDelegate) {
+        self.comment = comment
+        self.delegate = delegate
+
         usernameLabel.text = comment.username
         commentLabel.text = comment.commentText
 
@@ -35,6 +46,6 @@ class CommentTableViewCell: UITableViewCell {
     }
 
     @objc func optionsMenuTapped() {
-        
+        delegate?.commentOptionsTapped(comment)
     }
 }

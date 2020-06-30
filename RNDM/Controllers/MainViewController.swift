@@ -146,7 +146,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         let thought = thoughts[indexPath.row]
-        cell.configureCell(thought: thought)
+        cell.configureCell(thought: thought, delegate: self)
         return cell
     }
 

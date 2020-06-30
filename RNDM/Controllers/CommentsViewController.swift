@@ -130,7 +130,7 @@ extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
         }
 
         let comment = comments[indexPath.row]
-        cell.configureCell(comment: comment)
+        cell.configureCell(comment: comment, delegate: self)
         return cell
     }
 }
