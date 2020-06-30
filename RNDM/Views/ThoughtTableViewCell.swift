@@ -17,7 +17,8 @@ class ThoughtTableViewCell: UITableViewCell {
     @IBOutlet var likesImage: UIImageView!
     @IBOutlet var likesCountLabel: UILabel!
     @IBOutlet var commentCountLabel: UILabel!
-
+    @IBOutlet var optionsMenuImage: UIImageView!
+    
     private var thought: Thought!
 
     override func awakeFromNib() {

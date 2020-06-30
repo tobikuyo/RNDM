@@ -13,6 +13,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet var usernameLabel: UILabel!
     @IBOutlet var timestampLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var optionsMenuImage: UIImageView!
 
     func configureCell(comment: Comment) {
         usernameLabel.text = comment.username

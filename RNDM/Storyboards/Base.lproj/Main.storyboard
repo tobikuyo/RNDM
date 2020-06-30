@@ -97,15 +97,20 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImageDark" translatesAutoresizingMaskIntoConstraints="NO" id="xpN-Vt-Ei0">
+                                                    <rect key="frame" x="364" y="8" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="j9B-lX-OWM" firstAttribute="trailing" secondItem="LO0-fE-CHr" secondAttribute="trailingMargin" id="APu-ap-4bY"/>
                                                 <constraint firstItem="NXj-5t-pb5" firstAttribute="leading" secondItem="LO0-fE-CHr" secondAttribute="leadingMargin" id="DaU-RV-pMX"/>
+                                                <constraint firstItem="xpN-Vt-Ei0" firstAttribute="centerY" secondItem="A8E-gy-3nu" secondAttribute="centerY" id="HUu-Kq-sbA"/>
                                                 <constraint firstItem="Wpe-NE-D1h" firstAttribute="top" secondItem="j9B-lX-OWM" secondAttribute="bottom" constant="4" id="KbI-Mi-8fA"/>
                                                 <constraint firstItem="2SJ-yO-raU" firstAttribute="top" secondItem="j9B-lX-OWM" secondAttribute="bottom" constant="4" id="NzP-2D-V1P"/>
                                                 <constraint firstAttribute="bottom" secondItem="Wpe-NE-D1h" secondAttribute="bottom" constant="10" id="QIz-Pb-FnQ"/>
                                                 <constraint firstItem="A8E-gy-3nu" firstAttribute="leading" secondItem="NXj-5t-pb5" secondAttribute="trailing" constant="8" id="SVi-Jc-Yrr"/>
                                                 <constraint firstItem="A8E-gy-3nu" firstAttribute="centerY" secondItem="NXj-5t-pb5" secondAttribute="centerY" id="TEC-kh-EOe"/>
+                                                <constraint firstItem="xpN-Vt-Ei0" firstAttribute="trailing" secondItem="LO0-fE-CHr" secondAttribute="trailingMargin" id="bbC-wK-yB6"/>
                                                 <constraint firstAttribute="bottom" secondItem="2SJ-yO-raU" secondAttribute="bottom" constant="10" id="dav-HG-bed"/>
                                                 <constraint firstItem="NXj-5t-pb5" firstAttribute="top" secondItem="LO0-fE-CHr" secondAttribute="topMargin" id="kML-GQ-5nT"/>
                                                 <constraint firstItem="j9B-lX-OWM" firstAttribute="leading" secondItem="LO0-fE-CHr" secondAttribute="leadingMargin" id="lNi-mf-ft1"/>
@@ -119,6 +124,7 @@
                                             <outlet property="commentCountLabel" destination="DN2-I8-wyz" id="GOt-IB-0KR"/>
                                             <outlet property="likesCountLabel" destination="5IK-0j-8OL" id="lwY-Ne-u54"/>
                                             <outlet property="likesImage" destination="Gd1-nS-NnG" id="xcf-ex-EzP"/>
+                                            <outlet property="optionsMenuImage" destination="xpN-Vt-Ei0" id="Dc2-ZN-bMc"/>
                                             <outlet property="thoughtTextLabel" destination="j9B-lX-OWM" id="V2b-H3-zLq"/>
                                             <outlet property="timestampLabel" destination="A8E-gy-3nu" id="0it-dF-8BR"/>
                                             <outlet property="usernameLabel" destination="NXj-5t-pb5" id="FqX-cq-PQy"/>
@@ -198,19 +204,25 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImageDark" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-ya-cBI">
+                                                    <rect key="frame" x="364" y="14.5" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="oAk-zD-39M" firstAttribute="top" secondItem="pKy-Ke-5G4" secondAttribute="topMargin" constant="10" id="4hb-ub-jmk"/>
                                                 <constraint firstItem="VFT-EX-2Wl" firstAttribute="leading" secondItem="pKy-Ke-5G4" secondAttribute="leading" constant="8" id="UTx-1a-XpP"/>
+                                                <constraint firstItem="K1i-ya-cBI" firstAttribute="centerY" secondItem="oAk-zD-39M" secondAttribute="centerY" id="hxX-9d-r9C"/>
                                                 <constraint firstItem="T0p-XM-Zn7" firstAttribute="leading" secondItem="pKy-Ke-5G4" secondAttribute="leading" constant="8" id="kNQ-Ry-w9X"/>
                                                 <constraint firstItem="VFT-EX-2Wl" firstAttribute="top" secondItem="pKy-Ke-5G4" secondAttribute="top" constant="17" id="p4x-GA-8vL"/>
                                                 <constraint firstAttribute="bottom" secondItem="T0p-XM-Zn7" secondAttribute="bottom" constant="16.5" id="pbG-Nx-q6y"/>
+                                                <constraint firstItem="K1i-ya-cBI" firstAttribute="trailing" secondItem="pKy-Ke-5G4" secondAttribute="trailingMargin" id="tmH-Bs-d6d"/>
                                                 <constraint firstItem="oAk-zD-39M" firstAttribute="leading" secondItem="VFT-EX-2Wl" secondAttribute="trailing" constant="7.5" id="vZE-bh-kcx"/>
                                                 <constraint firstItem="T0p-XM-Zn7" firstAttribute="top" secondItem="VFT-EX-2Wl" secondAttribute="bottom" constant="8.5" id="xRv-zk-Ug2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="T0p-XM-Zn7" id="VUJ-IQ-TVT"/>
+                                            <outlet property="optionsMenuImage" destination="K1i-ya-cBI" id="zmp-SC-hSd"/>
                                             <outlet property="timestampLabel" destination="oAk-zD-39M" id="l4I-hV-FNF"/>
                                             <outlet property="usernameLabel" destination="VFT-EX-2Wl" id="eA5-Sg-AJc"/>
                                         </connections>
@@ -384,6 +396,7 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="optionsImageDark" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>
