@@ -12,8 +12,6 @@ import FirebaseAuth
 
 class MainViewController: UIViewController {
 
-    // MARK: - IBOutlets
-
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
 

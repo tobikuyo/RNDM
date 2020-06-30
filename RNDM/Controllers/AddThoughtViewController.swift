@@ -11,8 +11,6 @@ import Firebase
 
 class AddThoughtViewController: UIViewController {
 
-    // MARK: - IBOutlets
-
     @IBOutlet var categorySegment: UISegmentedControl!
     @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var thoughtTextView: UITextView!

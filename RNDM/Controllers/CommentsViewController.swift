@@ -12,11 +12,9 @@ import FirebaseAuth
 
 class CommentsViewController: UIViewController {
 
-    // MARK: - IBOutlets
-
     @IBOutlet var tableView: UITableView!
     @IBOutlet var commentTextField: UITextField!
-    @IBOutlet weak var keyboardView: UIView!
+    @IBOutlet var keyboardView: UIView!
 
     // MARK: - Properties
     
@@ -34,6 +32,7 @@ class CommentsViewController: UIViewController {
         pathToAddComment()
         tableView.delegate = self
         tableView.dataSource = self
+        view.bindToKeyboard()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -82,9 +81,10 @@ class CommentsViewController: UIViewController {
             let thoughtDocument: DocumentSnapshot
 
             do {
-                try thoughtDocument = transaction.getDocument(self.database
-                        .collection(DB.thoughts)
-                        .document(self.thought.documentID))
+                try thoughtDocument = transaction.getDocument(self
+                    .database
+                    .collection(DB.thoughts)
+                    .document(self.thought.documentID))
             } catch {
                 debugPrint("Error fetching comments: \(error.localizedDescription)")
                 return nil
@@ -94,7 +94,8 @@ class CommentsViewController: UIViewController {
 
             transaction.updateData([DB.numComments: oldCommentCount + 1], forDocument: self.thoughtRef)
 
-            let newCommentRef = self.database
+            let newCommentRef = self
+                .database
                 .collection(DB.thoughts)
                 .document(self.thought.documentID)
                 .collection(DB.comments)
@@ -111,6 +112,7 @@ class CommentsViewController: UIViewController {
                 debugPrint("Transaction failed: \(error)")
             } else {
                 self.commentTextField.text = ""
+                self.commentTextField.resignFirstResponder()
             }
         }
     }
