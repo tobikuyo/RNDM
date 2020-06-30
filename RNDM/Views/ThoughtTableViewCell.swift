@@ -52,5 +52,19 @@ class ThoughtTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "MMM d, HH:mm"
         let timestamp = dateFormatter.string(from: thought.timestamp)
         timestampLabel.text = timestamp
+
+
+        let tap = UIGestureRecognizer(target: self, action: #selector(optionsMenuTapped))
+        optionsMenuImage.isHidden = true
+
+        if thought.userID == Auth.auth().currentUser?.uid {
+            optionsMenuImage.isHidden = false
+            optionsMenuImage.isUserInteractionEnabled = true
+            optionsMenuImage.addGestureRecognizer(tap)
+        }
+    }
+
+    @objc func optionsMenuTapped() {
+        
     }
 }

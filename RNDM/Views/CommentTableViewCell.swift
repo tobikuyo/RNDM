@@ -23,5 +23,18 @@ class CommentTableViewCell: UITableViewCell {
         dateFormatter.dateFormat = "MMM d, HH:mm"
         let timestamp = dateFormatter.string(from: comment.timestamp)
         timestampLabel.text = timestamp
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(optionsMenuTapped))
+        optionsMenuImage.isHidden = true
+
+        if comment.userID == Auth.auth().currentUser?.uid {
+            optionsMenuImage.isHidden = false
+            optionsMenuImage.isUserInteractionEnabled = true
+            optionsMenuImage.addGestureRecognizer(tap)
+        }
+    }
+
+    @objc func optionsMenuTapped() {
+        
     }
 }
