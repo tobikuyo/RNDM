@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class AddThoughtViewController: UIViewController {
 
@@ -63,7 +64,8 @@ class AddThoughtViewController: UIViewController {
             DB.numLikes: 0,
             DB.thoughtText: thoughtText,
             DB.timestamp: FieldValue.serverTimestamp(),
-            DB.username: username
+            DB.username: username,
+            DB.userID: Auth.auth().currentUser?.uid ?? ""
         ]) { error in
             if let error = error {
                 print("Error adding document: \(error.localizedDescription)")

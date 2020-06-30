@@ -20,4 +20,5 @@ struct DB {
     static let dateCreated  = "dateCreated"
     static let comments     = "comments"
     static let commentText  = "commentText"
+    static let userID       = "userID"
 }

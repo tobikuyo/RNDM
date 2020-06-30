@@ -104,7 +104,8 @@ class CommentsViewController: UIViewController {
             transaction.setData([
                 DB.commentText: commentText,
                 DB.timestamp: FieldValue.serverTimestamp(),
-                DB.username: self.username ?? "Anonymous"
+                DB.username: self.username ?? "Anonymous",
+                DB.userID: Auth.auth().currentUser?.uid ?? ""
             ], forDocument: newCommentRef, merge: true)
             return nil
         }) { object, error in
