@@ -134,3 +134,9 @@ extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
+
+extension CommentsViewController: CommentDelegate {
+    func commentOptionsTapped(_ comment: Comment) {
+        Alert.editOrDelete(comment, for: thought, using: thoughtRef, in: self)
+    }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C24F97A24AC0110006F206F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C24F97924AC0110006F206F /* Alert.swift */; };
 		2C267B4B24A97DBF00450856 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4A24A97DBF00450856 /* CommentsViewController.swift */; };
 		2C267B4D24A983A500450856 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4C24A983A500450856 /* CommentTableViewCell.swift */; };
 		2C267B4F24A9854F00450856 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C267B4E24A9854F00450856 /* Comment.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C24F97924AC0110006F206F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		2C267B4A24A97DBF00450856 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		2C267B4C24A983A500450856 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		2C267B4E24A9854F00450856 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -153,8 +155,9 @@
 		2CD4FC4824A7E2FF00E7990C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2CD4FC4924A7E31600E7990C /* ThoughtCategory.swift */,
+				2C24F97924AC0110006F206F /* Alert.swift */,
 				2CD4FC4B24A7E43600E7990C /* Constants.swift */,
+				2CD4FC4924A7E31600E7990C /* ThoughtCategory.swift */,
 				2C267B5024AA77C300450856 /* KeyboardBoundView.swift */,
 				2CC0226024A7C733005F1D6D /* GoogleService-Info.plist */,
 			);
@@ -298,6 +301,7 @@
 				2C76E21E24A91E2300633783 /* LoginViewController.swift in Sources */,
 				2C76E22224A920D100633783 /* CreateUserViewController.swift in Sources */,
 				2CD4FC4524A7D87300E7990C /* AddThoughtViewController.swift in Sources */,
+				2C24F97A24AC0110006F206F /* Alert.swift in Sources */,
 				2CD4FC4324A7D86800E7990C /* MainViewController.swift in Sources */,
 				2CD4FC4A24A7E31600E7990C /* ThoughtCategory.swift in Sources */,
 				2CD4FC5024A80DCF00E7990C /* ThoughtTableViewCell.swift in Sources */,
