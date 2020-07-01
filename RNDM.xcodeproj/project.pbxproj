@@ -27,6 +27,7 @@
 		2CD4FC4C24A7E43600E7990C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4FC4B24A7E43600E7990C /* Constants.swift */; };
 		2CD4FC4E24A7F4E900E7990C /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4FC4D24A7F4E900E7990C /* Thought.swift */; };
 		2CD4FC5024A80DCF00E7990C /* ThoughtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD4FC4F24A80DCF00E7990C /* ThoughtTableViewCell.swift */; };
+		2CE770EE24AD211800489AE5 /* UpdateCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE770ED24AD211800489AE5 /* UpdateCommentViewController.swift */; };
 		46D34BDFDF4A2912D79BD5DB /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD62AD6C3E071DDE40E1D955 /* Pods_RNDM.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		2CD4FC4B24A7E43600E7990C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2CD4FC4D24A7F4E900E7990C /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		2CD4FC4F24A80DCF00E7990C /* ThoughtTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtTableViewCell.swift; sourceTree = "<group>"; };
+		2CE770ED24AD211800489AE5 /* UpdateCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCommentViewController.swift; sourceTree = "<group>"; };
 		98C00C0698B2E22D39E2E2B2 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		BCBD56FFE35E241FD1E6E741 /* Pods-RNDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.debug.xcconfig"; path = "Target Support Files/Pods-RNDM/Pods-RNDM.debug.xcconfig"; sourceTree = "<group>"; };
 		BD62AD6C3E071DDE40E1D955 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				2CD4FC4224A7D86800E7990C /* MainViewController.swift */,
 				2CD4FC4424A7D87300E7990C /* AddThoughtViewController.swift */,
 				2C267B4A24A97DBF00450856 /* CommentsViewController.swift */,
+				2CE770ED24AD211800489AE5 /* UpdateCommentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				2C76E21E24A91E2300633783 /* LoginViewController.swift in Sources */,
 				2C76E22224A920D100633783 /* CreateUserViewController.swift in Sources */,
 				2CD4FC4524A7D87300E7990C /* AddThoughtViewController.swift in Sources */,
+				2CE770EE24AD211800489AE5 /* UpdateCommentViewController.swift in Sources */,
 				2C24F97A24AC0110006F206F /* Alert.swift in Sources */,
 				2CD4FC4324A7D86800E7990C /* MainViewController.swift in Sources */,
 				2CD4FC4A24A7E31600E7990C /* ThoughtCategory.swift in Sources */,

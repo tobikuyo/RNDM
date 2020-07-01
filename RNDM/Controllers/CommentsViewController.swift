@@ -117,6 +117,17 @@ class CommentsViewController: UIViewController {
             }
         }
     }
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditCommentSegue" {
+            if let destinationVC = segue.destination as? UpdateCommentViewController,
+                let commentData = sender as? (comment: Comment, thought: Thought) {
+                destinationVC.commentData = commentData
+            }
+        }
+    }
 }
 
 extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -137,6 +148,6 @@ extension CommentsViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension CommentsViewController: CommentDelegate {
     func commentOptionsTapped(_ comment: Comment) {
-        Alert.editOrDelete(comment, for: thought, using: thoughtRef, in: self)
+        Alert.editOrDelete(comment, for: thought, with: thoughtRef, in: self)
     }
 }

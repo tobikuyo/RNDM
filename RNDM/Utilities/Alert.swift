@@ -11,17 +11,19 @@ import Firebase
 
 struct Alert {
 
-    static func editOrDelete(_ comment: Comment, for thought: Thought, using ref: DocumentReference, in vc: UIViewController) {
+    static func editOrDelete(_ comment: Comment, for thought: Thought, with ref: DocumentReference, in vc: UIViewController) {
         let alert = UIAlertController(title: "Edit Comment",
                                       message: "You can edit or delete your comment",
                                       preferredStyle: .actionSheet)
 
         let editAction = UIAlertAction(title: "Edit Comment", style: .default) { action in
-
+            vc.performSegue(withIdentifier: "EditCommentSegue", sender: (comment, thought))
+            alert.dismiss(animated: true, completion: nil)
         }
 
         let deleteAction = UIAlertAction(title: "Delete Comment", style: .destructive) { action in
             let database = Firestore.firestore()
+
             database.runTransaction({ transaction, errorPointer -> Any? in
                 let thoughtDocument: DocumentSnapshot
 
