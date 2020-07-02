@@ -13,7 +13,6 @@ import FirebaseAuth
 class AddThoughtViewController: UIViewController {
 
     @IBOutlet var categorySegment: UISegmentedControl!
-    @IBOutlet var usernameTextField: UITextField!
     @IBOutlet var thoughtTextView: UITextView!
     @IBOutlet var postButton: UIButton!
 
@@ -37,7 +36,6 @@ class AddThoughtViewController: UIViewController {
         thoughtTextView.text = "My random thought..."
         thoughtTextView.textColor = .lightGray
         thoughtTextView.delegate = self
-        usernameTextField.autocorrectionType = .no
     }
 
     // MARK: - IBActions
@@ -54,9 +52,7 @@ class AddThoughtViewController: UIViewController {
     }
 
     @IBAction func postButtonTapped(_ sender: Any) {
-        guard
-            let thoughtText = thoughtTextView.text,
-            let username = usernameTextField.text else { return }
+        guard let thoughtText = thoughtTextView.text else { return }
 
         database.collection(DB.thoughts).addDocument(data: [
             DB.category: selectedCategory,
@@ -64,7 +60,6 @@ class AddThoughtViewController: UIViewController {
             DB.numLikes: 0,
             DB.thoughtText: thoughtText,
             DB.timestamp: FieldValue.serverTimestamp(),
-            DB.username: username,
             DB.userID: Auth.auth().currentUser?.uid ?? ""
         ]) { error in
             if let error = error {

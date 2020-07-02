@@ -362,14 +362,8 @@
                                     <action selector="categoryChanged:" destination="EXF-cg-Hbc" eventType="valueChanged" id="ISl-JS-27F"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pm-bT-lW9">
-                                <rect key="frame" x="20" y="160" width="374" height="21"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m1Z-Tb-lyc">
-                                <rect key="frame" x="20" y="201" width="374" height="100"/>
+                                <rect key="frame" x="20" y="160" width="374" height="100"/>
                                 <color key="backgroundColor" white="0.67000000000000004" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="l6r-8Y-P23"/>
@@ -379,7 +373,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APS-7m-lOo">
-                                <rect key="frame" x="120" y="321" width="174" height="50"/>
+                                <rect key="frame" x="120" y="280" width="174" height="50"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HZo-6L-VvJ"/>
@@ -397,16 +391,13 @@
                         <constraints>
                             <constraint firstItem="Zs3-dW-MZj" firstAttribute="leading" secondItem="Gfb-Sp-Xs8" secondAttribute="leading" constant="20" id="9qB-Uy-3A6"/>
                             <constraint firstItem="Gfb-Sp-Xs8" firstAttribute="trailing" secondItem="Zs3-dW-MZj" secondAttribute="trailing" constant="20" id="Aob-9O-w4W"/>
-                            <constraint firstItem="m1Z-Tb-lyc" firstAttribute="top" secondItem="6pm-bT-lW9" secondAttribute="bottom" constant="20" id="K65-XI-Zvk"/>
-                            <constraint firstItem="Gfb-Sp-Xs8" firstAttribute="trailing" secondItem="6pm-bT-lW9" secondAttribute="trailing" constant="20" id="OQ8-4u-cgV"/>
-                            <constraint firstItem="6pm-bT-lW9" firstAttribute="leading" secondItem="Gfb-Sp-Xs8" secondAttribute="leading" constant="20" id="SFi-dI-dyf"/>
                             <constraint firstItem="Gfb-Sp-Xs8" firstAttribute="trailing" secondItem="APS-7m-lOo" secondAttribute="trailing" constant="120" id="Wbp-Jq-A9d"/>
                             <constraint firstItem="m1Z-Tb-lyc" firstAttribute="leading" secondItem="Gfb-Sp-Xs8" secondAttribute="leading" constant="20" id="byw-Sy-Qtd"/>
                             <constraint firstItem="Zs3-dW-MZj" firstAttribute="top" secondItem="Gfb-Sp-Xs8" secondAttribute="top" constant="20" id="hpW-LL-scV"/>
                             <constraint firstItem="Gfb-Sp-Xs8" firstAttribute="trailing" secondItem="m1Z-Tb-lyc" secondAttribute="trailing" constant="20" id="iBE-lw-vft"/>
+                            <constraint firstItem="m1Z-Tb-lyc" firstAttribute="top" secondItem="Zs3-dW-MZj" secondAttribute="bottom" constant="20" id="mHP-xk-4F9"/>
                             <constraint firstItem="APS-7m-lOo" firstAttribute="top" secondItem="m1Z-Tb-lyc" secondAttribute="bottom" constant="20" id="or9-V3-HFc"/>
                             <constraint firstItem="APS-7m-lOo" firstAttribute="leading" secondItem="Gfb-Sp-Xs8" secondAttribute="leading" constant="120" id="q3q-Gj-Y4h"/>
-                            <constraint firstItem="6pm-bT-lW9" firstAttribute="top" secondItem="Zs3-dW-MZj" secondAttribute="bottom" constant="20" id="xCf-8l-pc2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gfb-Sp-Xs8"/>
                     </view>
@@ -415,7 +406,6 @@
                         <outlet property="categorySegment" destination="Zs3-dW-MZj" id="usx-1D-xsE"/>
                         <outlet property="postButton" destination="APS-7m-lOo" id="ku7-C5-XnJ"/>
                         <outlet property="thoughtTextView" destination="m1Z-Tb-lyc" id="0lu-zb-fn5"/>
-                        <outlet property="usernameTextField" destination="6pm-bT-lW9" id="tyO-2E-6pV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6U-SU-xPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
