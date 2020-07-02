@@ -170,3 +170,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
+
+extension MainViewController: ThoughtDelegate {
+    func thoughtOptionsTapped(_ thought: Thought) {
+        Alert.deleteThought(thought, in: self)
+    }
+}

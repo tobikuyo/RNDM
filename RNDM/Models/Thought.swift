@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 class Thought {
     private(set) var username: String
@@ -35,7 +36,7 @@ class Thought {
 
         for document in documents {
             let data = document.data()
-            let username = data[DB.username] as? String ?? "Anonymous"
+            let username = Auth.auth().currentUser?.displayName ?? "Anonymous"
             let timestamp = data[DB.timestamp] as? Timestamp ?? Timestamp()
             let thoughtText = data[DB.thoughtText] as? String ?? ""
             let numLikes = data[DB.numLikes] as? Int ?? 0
